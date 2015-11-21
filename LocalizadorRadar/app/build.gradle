@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'alias_name'
+            keyPassword '123456'
+            storeFile file('/Users/ios/localizador-radares-key.keystore')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion "23.0.1"
-
     defaultConfig {
         applicationId "com.example.ios.localizadorradar"
         minSdkVersion 22
