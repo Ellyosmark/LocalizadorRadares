@@ -3,12 +3,35 @@
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".activity.MainActivity">
+
+    <android.support.v7.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radius"
+        android:layout_marginBottom="10dp">
+
+        <EditText
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:editable="true"
+            android:id="@+id/editTextRadius"
+            android:inputType="number"
+            android:hint="Informe o Raio" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRadius"
+            android:text="Ok"
+            />
+
+    </android.support.v7.widget.LinearLayoutCompat>
 
     <fragment
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:name="com.google.android.gms.maps.MapFragment"
         android:id="@+id/map"
+        android:layout_below="@+id/radius"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

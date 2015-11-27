@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'alias_name'
             keyPassword '123456'
-            storeFile file('/Users/ios/localizador-radares-key.keystore')
+            storeFile file('C:/Users/Mark/AndroidStudioProjects/LocalizadorRadares/LocalizadorRadar/localizador-radares-key.keystore')
             storePassword '123456'
         }
     }
@@ -30,6 +30,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.google.android.gms:play-services:8.3.0'
 }
