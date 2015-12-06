@@ -117,6 +117,10 @@ public class MainActivity extends Activity implements OnMapReadyCallback, View.O
 
     @Override
     public void onClick(View v) {
+        
+        if(((EditText)findViewById(R.id.editTextRadius)).getText().toString().equals(""))
+            return;
+        
         switch (v.getId()){
             case R.id.btnRadius:
                 getMap();
@@ -140,6 +144,7 @@ public class MainActivity extends Activity implements OnMapReadyCallback, View.O
                     map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
                     EditText editTextRadius = (EditText) findViewById(R.id.editTextRadius);
                     List<Radar> radares = radarDAO.findAllByRadius(Float.parseFloat(editTextRadius.getText().toString()), location);
+                    map.clear();
                     for(Radar r : radares){
                         String nomeImagen = getNomeImagem(r);
                         int idImage = getResources().getIdentifier(nomeImagen, "drawable", MainActivity.this.getPackageName());
